@@ -24,14 +24,13 @@ words = [
 # Function will choose random word from list
 word = random.choice(words)
 
-
-guesses = []
-
 # number of turns
 turns = 13
-
+# guesses made
+guesses = []
 correct = []
 incorrect = []
+
 while turns > 0:
 
     progress = []
@@ -50,8 +49,8 @@ while turns > 0:
         else:
             print("_")
 
-            # for every failure 1 will be
-            # incremented in failure
+            # for every incorrect, 1 will be added to failed
+            # props to Roan for lines 57-64 
             failed += 1
 
     for letter in word:
