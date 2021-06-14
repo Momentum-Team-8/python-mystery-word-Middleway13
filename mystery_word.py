@@ -33,16 +33,18 @@ incorrect = []
 
 while turns > 0:
 
+    # show game progress of
+    # correct letters and placement
+
     progress = []
 
     # counts failed guesses
     failed = 0
 
-    # letters from input taking one at a time
+    # take guesses and...
     for letter in word:
 
-        # comparing that character with
-        # the character in guesses
+        # compare with the letter in word
         if letter in guesses:
             print(letter)
 
@@ -50,9 +52,8 @@ while turns > 0:
             print("_")
 
             # for every incorrect, 1 will be added to failed
-            # props to Roan for lines 57-64 
             failed += 1
-
+    # props to Roan for lines 57-65
     for letter in word:
         if guesses == letter:
             progress.append(guesses)
@@ -61,16 +62,16 @@ while turns > 0:
             progress.append(letter)
         else:
             incorrect.append(guesses)
+    print(guesses)
 
     if failed == 0:
         # win the game if failure is 0
         # and print 'You Win'
-        print("You Win")
+        print("You win! Yay!")
 
         # print the correct word
         print("The word is:", word)
         break
-    print(guesses)
     # if incorrect guess then
     # it will ask for another letter
     guess = input("guess a letter:")
@@ -91,5 +92,5 @@ while turns > 0:
         print("You have", +turns, "more guesses")
 
         if turns == 0:
-            print("You lose")
+            print("You lose!")
             print("The word was:", word)
